@@ -1,0 +1,38 @@
+box:
+  id: node
+  env:
+    NODE_ENV: development
+# Build definition
+build:
+  # The steps that will be executed on build
+  steps:
+  
+    # A custom script step, name value is used in the UI
+    # and the code value contains the command that get executed
+    - script:
+        name: echo nodejs information
+        code: |
+          echo "node version $(node -v) running"
+          echo "npm version $(npm -v) running"
+  
+    # A step that executes `npm install` command
+    - npm-install
+    
+    - script:
+        name: webpack 
+        code: |
+          npm run build
+          
+deploy:
+  steps:
+
+    - xchapter7x/cf-push:
+        cloudfoundry_user_name: $cfuser
+        cloudfoundry_user_pass: $cfpass
+        cloudfoundry_org: DenimLabsInc
+        cloudfoundry_space: dev
+        cloudfoundry_api_url: https://api.ng.bluemix.net 
+        cloudfoundry_app_name: denim-app
+        cloudfoundry_use_manifest: true
+
+

@@ -1,0 +1,17 @@
+.app-container {
+	min-height: 100vh;
+	background-color: #eeeeee;
+	text-align: center;
+
+	&.darken {
+		background-color: #D8D8D8;
+	}
+
+	.content-container {
+		margin-left: 174px;
+
+		&.no-nav {
+			margin-left: 0;
+		}
+	}
+}

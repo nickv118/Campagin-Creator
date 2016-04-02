@@ -1,0 +1,79 @@
+.modal {
+
+	.modal-header {
+		display: flex;
+		flex-direction: row;
+		margin-bottom: 40px;
+
+		.btn-close-modal {
+			padding: 10px 25px 14px 25px;
+			border-radius: 20px;
+			margin-right: 50px;
+		}
+
+		.title {
+			font-size: 32px;
+		}
+	}
+
+	&.campaign-detail-modal {
+		.stats-section {
+			background-color: rgb(239, 239, 239);
+			padding: 30px 40px;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			border-radius: 5px;
+			margin-bottom: 20px;
+		}
+
+		p.label {
+			color: rgb(155, 155, 155);
+			font-weight: 500;
+			margin-bottom: 5px;
+		}
+
+		p.value {
+			color: rgb(92, 92, 92);
+			font-size: 15px;
+			font-weight: 500;
+
+			&.large {
+				font-size: 50px;
+				font-weight: 300;
+			}
+		}
+
+		.agents-table {
+			text-align: left;
+
+			.row {
+				color: rgb(74, 74, 74);
+				padding: 12px 0;
+				border-bottom: 2px solid rgb(155, 155, 155);
+				display: flex;
+				justify-content: space-around;
+
+				&.heading {
+					color: rgb(155, 155, 155);
+					border-bottom-color: rgb(74, 74, 74);
+					font-weight: 500;
+					font-size: 18px;
+				}
+
+				.cell {
+					&.agent {
+						flex: 0.6;
+					}
+					&.cpm, &.ctr {
+						flex: 0.2;
+					}
+
+					&.ctr {
+						text-align: right;
+					}
+				}
+			}
+		}
+	}
+}

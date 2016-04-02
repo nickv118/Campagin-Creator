@@ -1,0 +1,11 @@
+applications:
+- name: denim-app
+  path: .
+  memory: 128M
+  instances: 2
+  domain: mybluemix.net
+  disk_quota: 1024M
+  buildpack: nodejs_buildpack
+  command: npm start
+env:
+  NPM_CONFIG_PRODUCTION: false
